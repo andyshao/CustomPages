@@ -1,16 +1,15 @@
-﻿using CustomPage.Core.Widgets.Descriptor.Models;
-using Microsoft.AspNet.Html.Abstractions;
+﻿using Microsoft.AspNet.Html.Abstractions;
 using Microsoft.AspNet.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CustomPage.Core.Widgets.Render.Provider
+namespace CustomPage.Core.Render.Provider
 {
-    public sealed class ComponentWidgetRenderer : WidgetRenderer
+    public class ComponentRenderer : RendererBase
     {
         private readonly string _componentName;
 
-        public ComponentWidgetRenderer(WidgetRenderContext renderContext, IDictionary<string, object> model) : base(renderContext)
+        public ComponentRenderer(IDictionary<string, object> model)
         {
             _componentName = (string)model["ComponentName"];
         }

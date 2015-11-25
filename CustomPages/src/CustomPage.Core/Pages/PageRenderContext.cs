@@ -1,4 +1,4 @@
-using System.IO;
+using Microsoft.AspNet.Html.Abstractions;
 
 namespace CustomPage.Core.Pages
 {
@@ -73,7 +73,7 @@ namespace CustomPage.Core.Pages
         /// 用来替换渲染结果的内容。
         /// </summary>
 
-        public TextWriter Result { get; set; }
+        public IHtmlContent Result { get; set; }
 
         #endregion Property
     }

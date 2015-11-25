@@ -1,6 +1,7 @@
 ﻿using CustomPage.Core.Pages.Events;
 using CustomPage.Core.Widgets;
 using Microsoft.AspNet.Html.Abstractions;
+using Microsoft.AspNet.Mvc.Rendering;
 using Microsoft.Extensions.WebEncoders;
 using System;
 using System.Collections.Generic;
@@ -50,7 +51,7 @@ namespace CustomPage.Core.Pages
         /// </summary>
         /// <param name="model">渲染模型。</param>
         /// <returns>Html内容。</returns>
-        Task<TextWriter> Render(dynamic model);
+        Task<IHtmlContent> Render(object model);
     }
 
     /// <summary>
@@ -93,19 +94,19 @@ namespace CustomPage.Core.Pages
         /// <summary>
         /// 渲染页面。
         /// </summary>
-        /// <param name="display">显示者。</param>
+        /// <param name="model">模型。</param>
         /// <returns>Html内容。</returns>
-        public virtual async Task<TextWriter> Render(dynamic display)
+        public virtual async Task<IHtmlContent> Render(object model)
         {
             if (Widgets == null || !Widgets.Any())
                 return null;
             var writer = new StringWriter();
             foreach (var widget in Widgets.OrderBy(i => i.Position).Where(i => i.Renderer != null))
             {
-                IHtmlContent content = await widget.Renderer.Render(display);
+                var content = await widget.Renderer.Render(model);
                 content.WriteTo(writer, HtmlEncoder.Default);
             }
-            return writer;
+            return new HtmlString(writer.ToString());
         }
 
         #endregion Implementation of IPage
@@ -145,14 +146,14 @@ namespace CustomPage.Core.Pages
         /// <summary>
         /// 渲染页面。
         /// </summary>
-        /// <param name="display">显示者。</param>
+        /// <param name="model">模型。</param>
         /// <returns>Html 字符串。</returns>
-        public override async Task<TextWriter> Render(dynamic display)
+        public override async Task<IHtmlContent> Render(object model)
         {
             //执行页面渲染前事件。
             var renderingContext = InvokeEvents(new PageRenderingContext(this), (context, eventse) => eventse.Rendering(context));
 
-            TextWriter result;
+            IHtmlContent result;
             bool isReplaced;
             //如果渲染结果需要替换则进行替换
             if (renderingContext.Result != null)
@@ -164,7 +165,7 @@ namespace CustomPage.Core.Pages
             {
                 isReplaced = false;
                 //得到页面结果
-                result = await base.Render((object)display);
+                result = await base.Render(model);
             }
 
             //执行页面渲染后事件。

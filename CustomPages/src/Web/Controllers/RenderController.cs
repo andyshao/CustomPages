@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using CustomPage.Core.Pages;
 using CustomPage.Core.Pages.Events;
+using CustomPage.Core.Render;
 using CustomPage.Core.Widgets;
 using CustomPage.Core.Widgets.Descriptor;
 using CustomPage.Core.Widgets.Descriptor.Models;
@@ -32,16 +33,16 @@ namespace Web.Controllers
         {
             var descriptor = _widgetHarvester.HarvestWidgets().Last();
 
-            var context = new WidgetRenderContext("Page1", "page", "Widget1", descriptor.Name, new Dictionary<string, object>());
+            var renderer = _lifetimeScope.ResolveNamed<Lazy<IRenderer>>(descriptor.RendererDescriptor.RendererName,new PositionalParameter(0, descriptor.RendererDescriptor.Model));
+            var context = new WidgetRenderContext(renderer,"Page1", "page", "Widget1", descriptor.Name, new Dictionary<string, object>());
 
-            var renderer = _lifetimeScope.ResolveNamed<Lazy<IWidgetRenderer>>(descriptor.RendererDescriptor.RendererName, new PositionalParameter(0, context),
-                new PositionalParameter(1, descriptor.RendererDescriptor.Model));
+            var widgetRenderer = _lifetimeScope.Resolve<Lazy<IWidgetRenderer>>(new PositionalParameter(0, context));
 
             var page = new Page(() => _pageRenderEventses.Value)
             {
                 Widgets = new IWidget[]
                 {
-                    new Widget(descriptor,renderer)
+                    new Widget(descriptor,widgetRenderer)
                 }
             };
             return View(page);

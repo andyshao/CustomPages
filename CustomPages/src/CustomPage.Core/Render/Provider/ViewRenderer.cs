@@ -1,16 +1,15 @@
-﻿using CustomPage.Core.Widgets.Descriptor.Models;
-using Microsoft.AspNet.Html.Abstractions;
+﻿using Microsoft.AspNet.Html.Abstractions;
 using Microsoft.AspNet.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CustomPage.Core.Widgets.Render.Provider
+namespace CustomPage.Core.Render.Provider
 {
-    public sealed class ViewWidgetRenderer : WidgetRenderer
+    public class ViewRenderer : RendererBase
     {
         private readonly string _viewName;
 
-        public ViewWidgetRenderer(WidgetRenderContext renderContext, IDictionary<string,object> model) : base(renderContext)
+        public ViewRenderer(IDictionary<string, object> model)
         {
             _viewName = (string)model["ViewName"];
         }

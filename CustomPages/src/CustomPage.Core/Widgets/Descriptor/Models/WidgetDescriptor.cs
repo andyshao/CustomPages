@@ -44,12 +44,6 @@ namespace CustomPage.Core.Widgets.Descriptor.Models
         /// </summary>
         public WidgetResource Resource { get; set; }
 
-        /*/// <summary>
-        /// 微件渲染器。
-        /// </summary>
-        [JsonIgnore]
-        public Func<WidgetRenderContext, IWidgetRenderer> Render { get; set; }*/
-
         /// <summary>
         /// 微件渲染器描述符。
         /// </summary>

@@ -1,8 +1,9 @@
 ﻿using Autofac;
 using Autofac.Core;
+using CustomPage.Core.Render;
+using CustomPage.Core.Render.Provider;
 using CustomPage.Core.Widgets.Descriptor;
 using CustomPage.Core.Widgets.Render;
-using CustomPage.Core.Widgets.Render.Provider;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CustomPage.Extensions.DependencyInjection
@@ -21,8 +22,9 @@ namespace CustomPage.Extensions.DependencyInjection
         ///             registered.</param>
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<ViewWidgetRenderer>().Named<IWidgetRenderer>("View");
-            builder.RegisterType<ComponentWidgetRenderer>().Named<IWidgetRenderer>("Component");
+            builder.RegisterType<ViewRenderer>().Named<IRenderer>("View");
+            builder.RegisterType<ComponentRenderer>().Named<IRenderer>("Component");
+            builder.RegisterType<WidgetRenderer>().As<IWidgetRenderer>();
         }
 
         #endregion Overrides of Module
