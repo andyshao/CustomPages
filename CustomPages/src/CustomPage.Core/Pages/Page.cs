@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CustomPage.Core
+namespace CustomPage.Core.Pages
 {
     /// <summary>
     /// 一个抽象的页面。

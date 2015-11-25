@@ -1,3 +1,4 @@
+using CustomPage.Core.Pages;
 using System.IO;
 
 namespace CustomPage.Core.Event
