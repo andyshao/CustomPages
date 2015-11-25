@@ -1,5 +1,6 @@
 ﻿using CustomPage.Core.Widgets.Descriptor.Models;
 using CustomPage.Core.Widgets.Render;
+using System;
 using System.Collections.Generic;
 
 namespace CustomPage.Core.Widgets
@@ -35,12 +36,17 @@ namespace CustomPage.Core.Widgets
     /// </summary>
     public abstract class WidgetBase : IWidget
     {
+        #region Field
+
+        private readonly Lazy<IWidgetRenderer> _renderer;
+
+        #endregion Field
         #region Constructor
 
-        protected WidgetBase(WidgetDescriptor descriptor, IWidgetRenderer renderer)
+        protected WidgetBase(WidgetDescriptor descriptor, Lazy<IWidgetRenderer> renderer)
         {
             Descriptor = descriptor;
-            Renderer = renderer;
+            _renderer = renderer;
             Settings = new Dictionary<string, string>();
         }
 
@@ -66,7 +72,7 @@ namespace CustomPage.Core.Widgets
         /// <summary>
         /// 渲染器。
         /// </summary>
-        public IWidgetRenderer Renderer { get; }
+        public IWidgetRenderer Renderer => _renderer.Value;
 
         #endregion Implementation of IWidget
     }
@@ -76,7 +82,7 @@ namespace CustomPage.Core.Widgets
     /// </summary>
     public sealed class Widget : WidgetBase
     {
-        public Widget(WidgetDescriptor descriptor, IWidgetRenderer render)
+        public Widget(WidgetDescriptor descriptor, Lazy<IWidgetRenderer> render)
             : base(descriptor, render)
         {
         }

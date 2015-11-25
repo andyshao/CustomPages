@@ -34,7 +34,7 @@ namespace Web.Controllers
 
             var context = new WidgetRenderContext("Page1", "page", "Widget1", descriptor.Name, new Dictionary<string, object>());
 
-            var renderer = _lifetimeScope.ResolveNamed<IWidgetRenderer>(descriptor.RendererDescriptor.RendererName, new PositionalParameter(0, context),
+            var renderer = _lifetimeScope.ResolveNamed<Lazy<IWidgetRenderer>>(descriptor.RendererDescriptor.RendererName, new PositionalParameter(0, context),
                 new PositionalParameter(1, descriptor.RendererDescriptor.Model));
 
             var page = new Page(() => _pageRenderEventses.Value)
