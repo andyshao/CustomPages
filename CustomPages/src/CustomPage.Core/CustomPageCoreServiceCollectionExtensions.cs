@@ -22,6 +22,7 @@ namespace CustomPage.Extensions.DependencyInjection
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<ViewWidgetRenderer>().Named<IWidgetRenderer>("View");
+            builder.RegisterType<ComponentWidgetRenderer>().Named<IWidgetRenderer>("Component");
         }
 
         #endregion Overrides of Module

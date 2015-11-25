@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace CustomPage.Core.Event
+namespace CustomPage.Core.Pages.Events
 {
     /// <summary>
     /// 一个抽象的页面渲染事件。
@@ -17,14 +17,14 @@ namespace CustomPage.Core.Event
         /// </summary>
         /// <param name="context">渲染前上下文。</param>
         /// <returns>任务。</returns>
-        Task Rendering(RenderingContext context);
+        Task Rendering(PageRenderingContext context);
 
         /// <summary>
         /// 渲染完成后执行。
         /// </summary>
         /// <param name="context">渲染后上下文。</param>
         /// <returns>任务。</returns>
-        Task Rendered(RenderedContext context);
+        Task Rendered(PageRenderedContext context);
     }
 
     /// <summary>
@@ -44,7 +44,7 @@ namespace CustomPage.Core.Event
         /// </summary>
         /// <param name="context">渲染前上下文。</param>
         /// <returns>任务。</returns>
-        public virtual Task Rendering(RenderingContext context)
+        public virtual Task Rendering(PageRenderingContext context)
         {
             return Task.Run(() => { });
         }
@@ -54,7 +54,7 @@ namespace CustomPage.Core.Event
         /// </summary>
         /// <param name="context">渲染后上下文。</param>
         /// <returns>任务。</returns>
-        public virtual Task Rendered(RenderedContext context)
+        public virtual Task Rendered(PageRenderedContext context)
         {
             return Task.Run(() => { });
         }

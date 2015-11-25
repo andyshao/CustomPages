@@ -1,4 +1,4 @@
-﻿using CustomPage.Core.Event;
+﻿using CustomPage.Core.Pages.Events;
 using CustomPage.Core.Widgets;
 using Microsoft.AspNet.Html.Abstractions;
 using Microsoft.Extensions.WebEncoders;
@@ -150,7 +150,7 @@ namespace CustomPage.Core.Pages
         public override async Task<TextWriter> Render(dynamic display)
         {
             //执行页面渲染前事件。
-            var renderingContext = InvokeEvents(new RenderingContext(this), (context, eventse) => eventse.Rendering(context));
+            var renderingContext = InvokeEvents(new PageRenderingContext(this), (context, eventse) => eventse.Rendering(context));
 
             TextWriter result;
             bool isReplaced;
@@ -168,7 +168,7 @@ namespace CustomPage.Core.Pages
             }
 
             //执行页面渲染后事件。
-            InvokeEvents(new RenderedContext(this, isReplaced), (context, eventse) => eventse.Rendered(context));
+            InvokeEvents(new PageRenderedContext(this, isReplaced), (context, eventse) => eventse.Rendered(context));
 
             return result;
         }
@@ -177,7 +177,7 @@ namespace CustomPage.Core.Pages
 
         #region Private Method
 
-        private T InvokeEvents<T>(T context, Action<T, IPageRenderEvents> action) where T : RenderContext<Page>
+        private T InvokeEvents<T>(T context, Action<T, IPageRenderEvents> action) where T : PageRenderContext<Page>
         {
             var renderEventses = _renderEventses().OrderByDescending(i => i.Priority);
             foreach (var eventse in renderEventses)

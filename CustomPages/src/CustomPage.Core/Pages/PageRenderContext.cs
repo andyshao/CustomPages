@@ -1,13 +1,12 @@
-using CustomPage.Core.Pages;
 using System.IO;
 
-namespace CustomPage.Core.Event
+namespace CustomPage.Core.Pages
 {
     /// <summary>
     /// 页面渲染上下文。
     /// </summary>
     /// <typeparam name="T">页面类型。</typeparam>
-    public abstract class RenderContext<T> where T : class,IPage
+    public abstract class PageRenderContext<T> where T : class,IPage
     {
         #region Constructor
 
@@ -15,7 +14,7 @@ namespace CustomPage.Core.Event
         /// 初始化一个新的页面渲染上下文。
         /// </summary>
         /// <param name="page">页面信息。</param>
-        protected RenderContext(T page)
+        protected PageRenderContext(T page)
         {
             //            Page = page.NotNull("page");
             Page = page;
@@ -53,7 +52,7 @@ namespace CustomPage.Core.Event
     /// <summary>
     /// 页面渲染前上下文。
     /// </summary>
-    public class RenderingContext : RenderContext<Page>
+    public class PageRenderingContext : PageRenderContext<Page>
     {
         #region Constructor
 
@@ -61,7 +60,7 @@ namespace CustomPage.Core.Event
         /// 初始化一个新的页面渲染前上下文。
         /// </summary>
         /// <param name="page">页面信息。</param>
-        public RenderingContext(Page page)
+        public PageRenderingContext(Page page)
             : base(page)
         {
         }
@@ -82,7 +81,7 @@ namespace CustomPage.Core.Event
     /// <summary>
     /// 页面渲染后上下文。
     /// </summary>
-    public class RenderedContext : RenderContext<Page>
+    public class PageRenderedContext : PageRenderContext<Page>
     {
         #region Constructor
 
@@ -92,7 +91,7 @@ namespace CustomPage.Core.Event
         /// <param name="page">页面信息。</param>
         /// <param name="isReplaced">渲染结果是否被替换。</param>
 
-        public RenderedContext(Page page, bool isReplaced)
+        public PageRenderedContext(Page page, bool isReplaced)
             : base(page)
         {
             IsReplaced = isReplaced;

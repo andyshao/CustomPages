@@ -1,6 +1,6 @@
 ﻿using Autofac;
-using CustomPage.Core.Event;
 using CustomPage.Core.Pages;
+using CustomPage.Core.Pages.Events;
 using CustomPage.Core.Widgets;
 using CustomPage.Core.Widgets.Descriptor;
 using CustomPage.Core.Widgets.Descriptor.Models;

@@ -1,6 +1,7 @@
 ﻿using CustomPage.Core.Widgets.Descriptor.Models;
 using Microsoft.AspNet.Html.Abstractions;
 using Microsoft.AspNet.Mvc;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace CustomPage.Core.Widgets.Render.Provider
@@ -9,9 +10,9 @@ namespace CustomPage.Core.Widgets.Render.Provider
     {
         private readonly string _componentName;
 
-        public ComponentWidgetRenderer(string componentName, WidgetRenderContext renderContext) : base(renderContext)
+        public ComponentWidgetRenderer(WidgetRenderContext renderContext, IDictionary<string, object> model) : base(renderContext)
         {
-            _componentName = componentName;
+            _componentName = (string)model["ComponentName"];
         }
 
         #region Overrides of WidgetRenderer
