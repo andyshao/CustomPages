@@ -1,8 +1,8 @@
 ﻿using Autofac;
 using Autofac.Core;
 using Autofac.Extensions.DependencyInjection;
-using CustomPages.Core.Widgets.Descriptor;
-using CustomPages.Extensions.DependencyInjection;
+using CustomPage.Core.Widgets.Descriptor;
+using CustomPage.Extensions.DependencyInjection;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.DependencyInjection;

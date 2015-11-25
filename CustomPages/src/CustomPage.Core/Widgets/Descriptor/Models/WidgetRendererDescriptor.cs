@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CustomPages.Core.Widgets.Descriptor.Models
+namespace CustomPage.Core.Widgets.Descriptor.Models
 {
     public class WidgetRendererDescriptor
     {

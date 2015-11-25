@@ -1,10 +1,10 @@
 ﻿using Autofac;
-using CustomPages.Core;
-using CustomPages.Core.Event;
-using CustomPages.Core.Widgets;
-using CustomPages.Core.Widgets.Descriptor;
-using CustomPages.Core.Widgets.Descriptor.Models;
-using CustomPages.Core.Widgets.Render;
+using CustomPage.Core;
+using CustomPage.Core.Event;
+using CustomPage.Core.Widgets;
+using CustomPage.Core.Widgets.Descriptor;
+using CustomPage.Core.Widgets.Descriptor.Models;
+using CustomPage.Core.Widgets.Render;
 using Microsoft.AspNet.Mvc;
 using System;
 using System.Collections.Generic;

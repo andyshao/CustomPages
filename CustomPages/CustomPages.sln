@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Web", "src\Web\Web.xproj", "{11D1E2E9-CB39-4898-A6E0-A02AE7E3A122}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CustomPages.Core", "src\CustomPages.Core\CustomPages.Core.xproj", "{A304D1E9-FB82-4393-8F84-08217544B639}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CustomPage.Core", "src\CustomPage.Core\CustomPage.Core.xproj", "{A304D1E9-FB82-4393-8F84-08217544B639}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Web.Designer", "src\Web.Designer\Web.Designer.xproj", "{6CC15318-1D5C-4810-A9CB-FC9F8DB0F349}"
 EndProject

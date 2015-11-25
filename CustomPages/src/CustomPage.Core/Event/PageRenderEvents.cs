@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace CustomPages.Core.Event
+namespace CustomPage.Core.Event
 {
     /// <summary>
     /// 一个抽象的页面渲染事件。

@@ -12,7 +12,7 @@
     "Autofac": "4.0.0-rc1-177",
     "Autofac.Extensions.DependencyInjection": "4.0.0-rc1-177",
     "Microsoft.AspNet.Diagnostics": "1.0.0-rc1-final",
-    "CustomPages.Core": "1.0.0"
+    "CustomPage.Core": "1.0.0"
   },
 
   "commands": {

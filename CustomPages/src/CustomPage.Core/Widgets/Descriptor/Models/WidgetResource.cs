@@ -2,7 +2,7 @@ using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.Rendering;
 using System.Threading.Tasks;
 
-namespace CustomPages.Core.Widgets.Descriptor.Models
+namespace CustomPage.Core.Widgets.Descriptor.Models
 {
     /// <summary>
     /// Î¢¼þ×ÊÔ´¡£

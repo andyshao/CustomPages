@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace CustomPages.Core.Event
+namespace CustomPage.Core.Event
 {
     /// <summary>
     /// 页面渲染上下文。

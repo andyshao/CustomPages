@@ -1,9 +1,9 @@
-using CustomPages.Core.Widgets.Descriptor.Models;
+using CustomPage.Core.Widgets.Descriptor.Models;
 using Microsoft.AspNet.Html.Abstractions;
 using Microsoft.AspNet.Mvc.Rendering;
 using System.Threading.Tasks;
 
-namespace CustomPages.Core.Widgets.Render
+namespace CustomPage.Core.Widgets.Render
 {
     /// <summary>
     /// 一个抽象的视图渲染器。

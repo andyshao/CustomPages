@@ -1,5 +1,5 @@
-﻿using CustomPages.Core.Event;
-using CustomPages.Core.Widgets;
+﻿using CustomPage.Core.Event;
+using CustomPage.Core.Widgets;
 using Microsoft.AspNet.Html.Abstractions;
 using Microsoft.Extensions.WebEncoders;
 using System;
@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CustomPages.Core
+namespace CustomPage.Core
 {
     /// <summary>
     /// 一个抽象的页面。

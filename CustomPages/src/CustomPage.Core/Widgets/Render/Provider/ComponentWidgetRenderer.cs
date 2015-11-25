@@ -1,9 +1,9 @@
-﻿using CustomPages.Core.Widgets.Descriptor.Models;
+﻿using CustomPage.Core.Widgets.Descriptor.Models;
 using Microsoft.AspNet.Html.Abstractions;
 using Microsoft.AspNet.Mvc;
 using System.Threading.Tasks;
 
-namespace CustomPages.Core.Widgets.Render.Provider
+namespace CustomPage.Core.Widgets.Render.Provider
 {
     public sealed class ComponentWidgetRenderer : WidgetRenderer
     {

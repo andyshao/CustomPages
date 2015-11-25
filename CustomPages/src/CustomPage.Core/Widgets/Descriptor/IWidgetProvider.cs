@@ -1,7 +1,7 @@
-﻿using CustomPages.Core.Widgets.Descriptor.Models;
+﻿using CustomPage.Core.Widgets.Descriptor.Models;
 using System.Collections.Generic;
 
-namespace CustomPages.Core.Widgets.Descriptor
+namespace CustomPage.Core.Widgets.Descriptor
 {
     /// <summary>
     /// 一个抽象的微件提供程序。

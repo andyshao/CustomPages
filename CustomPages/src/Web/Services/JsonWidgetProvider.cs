@@ -1,5 +1,5 @@
-﻿using CustomPages.Core.Widgets.Descriptor;
-using CustomPages.Core.Widgets.Descriptor.Models;
+﻿using CustomPage.Core.Widgets.Descriptor;
+using CustomPage.Core.Widgets.Descriptor.Models;
 using Microsoft.Extensions.PlatformAbstractions;
 using Newtonsoft.Json;
 using System.Collections.Generic;

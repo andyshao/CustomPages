@@ -1,11 +1,11 @@
 ﻿using Autofac;
 using Autofac.Core;
-using CustomPages.Core.Widgets.Descriptor;
-using CustomPages.Core.Widgets.Render;
-using CustomPages.Core.Widgets.Render.Provider;
+using CustomPage.Core.Widgets.Descriptor;
+using CustomPage.Core.Widgets.Render;
+using CustomPage.Core.Widgets.Render.Provider;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CustomPages.Extensions.DependencyInjection
+namespace CustomPage.Extensions.DependencyInjection
 {
     internal class CustomModule : Module
     {

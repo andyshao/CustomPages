@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CustomPages.Core.Widgets.Descriptor.Models
+namespace CustomPage.Core.Widgets.Descriptor.Models
 {
     /// <summary>
     /// 微件渲染上下文。

@@ -1,8 +1,8 @@
-﻿using CustomPages.Core.Widgets.Descriptor.Models;
-using CustomPages.Core.Widgets.Render;
+﻿using CustomPage.Core.Widgets.Descriptor.Models;
+using CustomPage.Core.Widgets.Render;
 using System.Collections.Generic;
 
-namespace CustomPages.Core.Widgets
+namespace CustomPage.Core.Widgets
 {
     /// <summary>
     /// 一个抽象的微件。

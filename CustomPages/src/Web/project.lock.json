@@ -37,10 +37,11 @@
           "lib/net451/Autofac.Extensions.DependencyInjection.dll": {}
         }
       },
-      "CustomPages.Core/1.0.0": {
+      "CustomPage.Core/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "Autofac": "4.0.0-rc1-177",
           "Microsoft.AspNet.Mvc": "6.0.0-rc1-final"
         }
       },
@@ -1692,10 +1693,11 @@
           "lib/dotnet5.4/Autofac.Extensions.DependencyInjection.dll": {}
         }
       },
-      "CustomPages.Core/1.0.0": {
+      "CustomPage.Core/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
+          "Autofac": "4.0.0-rc1-177",
           "Microsoft.AspNet.Mvc": "6.0.0-rc1-final"
         }
       },
@@ -3973,10 +3975,11 @@
           "lib/net451/Autofac.Extensions.DependencyInjection.dll": {}
         }
       },
-      "CustomPages.Core/1.0.0": {
+      "CustomPage.Core/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "Autofac": "4.0.0-rc1-177",
           "Microsoft.AspNet.Mvc": "6.0.0-rc1-final"
         }
       },
@@ -5625,10 +5628,11 @@
           "lib/net451/Autofac.Extensions.DependencyInjection.dll": {}
         }
       },
-      "CustomPages.Core/1.0.0": {
+      "CustomPage.Core/1.0.0": {
         "type": "project",
         "framework": "DNX,Version=v4.5.1",
         "dependencies": {
+          "Autofac": "4.0.0-rc1-177",
           "Microsoft.AspNet.Mvc": "6.0.0-rc1-final"
         }
       },
@@ -7283,10 +7287,11 @@
           "lib/dotnet5.4/Autofac.Extensions.DependencyInjection.dll": {}
         }
       },
-      "CustomPages.Core/1.0.0": {
+      "CustomPage.Core/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
+          "Autofac": "4.0.0-rc1-177",
           "Microsoft.AspNet.Mvc": "6.0.0-rc1-final"
         }
       },
@@ -10070,10 +10075,11 @@
           "lib/dotnet5.4/Autofac.Extensions.DependencyInjection.dll": {}
         }
       },
-      "CustomPages.Core/1.0.0": {
+      "CustomPage.Core/1.0.0": {
         "type": "project",
         "framework": "DNXCore,Version=v5.0",
         "dependencies": {
+          "Autofac": "4.0.0-rc1-177",
           "Microsoft.AspNet.Mvc": "6.0.0-rc1-final"
         }
       },
@@ -12818,9 +12824,9 @@
     }
   },
   "libraries": {
-    "CustomPages.Core/1.0.0": {
+    "CustomPage.Core/1.0.0": {
       "type": "project",
-      "path": "../CustomPages.Core/project.json"
+      "path": "../CustomPage.Core/project.json"
     },
     "Autofac/4.0.0-rc1-177": {
       "type": "package",
@@ -18100,7 +18106,7 @@
       "Autofac.Extensions.DependencyInjection >= 4.0.0-rc1-177",
       "Microsoft.AspNet.Diagnostics >= 1.0.0-rc1-final",
       "Newtonsoft.Json >= 8.0.1-beta3",
-      "CustomPages.Core >= 1.0.0"
+      "CustomPage.Core >= 1.0.0"
     ],
     "DNX,Version=v4.5.1": [],
     "DNXCore,Version=v5.0": []
