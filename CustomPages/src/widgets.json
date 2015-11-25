@@ -1,0 +1,18 @@
+[
+  {
+    "Title": "asd",
+    "Name": "asd",
+    "Category": "",
+    "Description": "",
+    "PreviewImage": "",
+    "Resource": {
+      "Designer": [ ],
+      "View": [ ]
+    },
+    "RendererDescriptor": {
+      "RendererName": "View",
+      "Model": { "ViewName": "~/Views/Test" }
+    },
+    "Visible": true
+  }
+]

@@ -1,0 +1,40 @@
+﻿@using System.Dynamic
+@using CustomPages.Core
+@model IPage
+@{
+    var allWidgets = Model.Widgets;
+    dynamic model = new ExpandoObject();
+    model.HtmlHelper = Html;
+    model.ComponentHelper = Component;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Model.Title</title>
+    <meta name="description" content="@Model.Description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    @if (!string.IsNullOrEmpty(Model.BackgroundColor))
+    {
+        <style type="text/css">
+            body {
+                background-color: @Model.BackgroundColor;
+            }
+        </style>
+    }
+    @foreach (var resource in allWidgets.Where(i => i.Descriptor.Resource?.View != null).Select(i => new { i.Descriptor.Name, i.Descriptor }).GroupBy(i => i.Name).SelectMany(i => i.First().Descriptor.Resource.View))
+    {
+        @(await resource.Render(Url))
+    }
+</head>
+<body>
+    <div class="container-fluid cs-page clearfix">
+        <div class="top-widgets">
+        </div>
+        <div class="widgets-content">
+            @await Model.Render(model)
+        </div>
+        <div class="end-widgets">
+        </div>
+    </div>
+</body>
+</html>
